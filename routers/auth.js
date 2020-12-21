@@ -3,8 +3,6 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 // Controllers
 const usersController = require('../controllers/users');
-usersController.registerUser('bettatech', '1234');
-usersController.registerUser('mastermind', '4321');
 
 router.route('/')
     .get((req, res) => {
