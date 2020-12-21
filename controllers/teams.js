@@ -18,6 +18,12 @@ const addPokemon = (userId, pokemon) => {
     teamsDatabase[userId].push(pokemon);
 }
 
+const deletePokemonAt = (userId, index) => {
+    if (teamsDatabase[userId][index]) {
+        teamsDatabase[userId].splice(index, 1);
+    }
+}
+
 const setTeam = (userId, team) => {
     teamsDatabase[userId] = team;
 }
@@ -27,3 +33,4 @@ exports.addPokemon = addPokemon;
 exports.setTeam = setTeam;
 exports.getTeamOfUser = getTeamOfUser;
 exports.cleanUpTeam = cleanUpTeam;
+exports.deletePokemonAt = deletePokemonAt;
