@@ -31,7 +31,6 @@ const checkUserCredentials = (userName, password, done) => {
     } else {
         done('Missing user');
     }
-    
 }
 exports.registerUser = registerUser;
 exports.checkUserCredentials = checkUserCredentials;
