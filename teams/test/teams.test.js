@@ -7,13 +7,13 @@ const teamsController = require('../teams.controller');
 
 const app = require('../../app').app;
 
-before((done) => {
-    usersController.registerUser('bettatech', '1234');
-    usersController.registerUser('mastermind', '4321');
-    done();
+beforeEach(async () => {
+    await usersController.registerUser('bettatech', '1234');
+    await usersController.registerUser('mastermind', '4321');
 })
 
 afterEach(async () => {
+    await usersController.cleanUpUsers();
     await teamsController.cleanUpTeam();
 })
 
@@ -154,9 +154,4 @@ describe('Suite de pruebas teams', () => {
             });
     });
 
-});
-
-after((done) => {
-    usersController.cleanUpUsers();
-    done();
 });

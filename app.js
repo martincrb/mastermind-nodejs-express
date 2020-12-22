@@ -1,5 +1,6 @@
 const express = require('express');
 const middlewares = require('./middlewares');
+require('./database');
 // Routes
 const authRoutes = require('./auth/auth.router').router;
 const teamsRoutes = require('./teams/teams.router').router;
@@ -9,6 +10,7 @@ const app = express();
 const port = 3000;
 
 middlewares.setupMiddlewares(app);
+
 app.get('/', (req, res) => {
     // req es la request, la peticion
     // res es la respuesta
