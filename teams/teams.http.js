@@ -25,7 +25,6 @@ const setTeamToUser = async (req, res) => {
 }
 
 const addPokemonToTeam = async (req, res) => {
-    console.log('@B@BB@B@B@BB@')
     let pokemonName = req.body.name;
     let [pokeApiError, pokeApiResponse] = 
         await to(axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`))
